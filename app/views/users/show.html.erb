@@ -1,0 +1,32 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @user.name %>
+</p>
+
+<p>
+  <b>Bio:</b>
+  <%= @user.bio %>
+</p>
+
+<p>
+  <b>Email:</b>
+  <%= @user.email %>
+</p>
+
+<p>
+  <b>Twitter Name:</b>
+  <%= @user.twitter_name %>
+</p>
+
+<p>
+  <b>Posts:</b>
+  <% @user.posts.each do |post| %>
+    Post: <%= link_to post.post, [@user, post] %><br/>
+  <% end %>
+  <%= link_to "Create new post", new_user_post_path(@user) %>
+</p>
+
+<%= link_to 'Edit', edit_user_path(@user) %> |
+<%= link_to 'Back', users_path %>
